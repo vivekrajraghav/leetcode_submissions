@@ -7,7 +7,7 @@ class Solution:
         while high>=low:
             mid=(low+high)//2
             if nums[low]<=nums[mid]:
-                mini=min(mini,nums[low],nums[mid])
+                mini=min(mini,nums[low])
                 low=mid+1
             elif nums[mid]<=nums[high]:
                 mini=min(mini,nums[mid])
