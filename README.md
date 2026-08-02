@@ -23,7 +23,7 @@ Thanks to LeetSync, the files are automatically structured in a clean, readable 
 *   The problem description.
 
 ## 🔗 Connect With Me
-*   **LeetCode Profile:** [vrvivekraghav](https://leetcode.com/vivekrajraghav) *(Update this link if your LeetCode username is different)*
+*   **LeetCode Profile:** [vivekrajraghav](https://leetcode.com/vivekrajraghav)
 *   **GitHub:** [@vivekrajraghav](https://github.com/vivekrajraghav)
 
 ---
