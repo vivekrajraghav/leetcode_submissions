@@ -28,4 +28,4 @@ class Solution:
                     fast=fast.next
                     slow=slow.next
                 return fast
-        return None     
+        return     
