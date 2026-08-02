@@ -14,7 +14,7 @@ class Solution:
         #     else:
         #         my_set.add(temp)
         #     temp=temp.next
-        # return
+        # return None
 
         # Using Slow and fast pointer to get Space(1)
         fast=head
@@ -28,4 +28,4 @@ class Solution:
                     fast=fast.next
                     slow=slow.next
                 return fast
-        return         
+        return None     
