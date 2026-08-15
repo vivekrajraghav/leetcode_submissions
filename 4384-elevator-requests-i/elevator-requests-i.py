@@ -5,5 +5,4 @@ class Solution:
         for req in requests:
             total += abs(req - prev)
             prev = req
-            
         return total
