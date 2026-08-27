@@ -1,16 +1,10 @@
 class Solution:
-    def solve(self,idx,subset,nums,result):
+    def solve(self,idx,curr_XOR,nums):
         if idx>=len(nums):
-            XOR=0
-            for digit in subset:
-                XOR^=digit
-            result.append(XOR)
-            return
-        subset.append(nums[idx])
-        self.solve(idx+1,subset,nums,result)
-        subset.pop()
-        self.solve(idx+1,subset,nums,result)
+            return curr_XOR
+        include=self.solve(idx+1,curr_XOR^nums[idx],nums)
+        exclude=self.solve(idx+1,curr_XOR,nums)
+        return include+exclude
     def subsetXORSum(self, nums: List[int]) -> int:
-        result=[]
-        self.solve(0,[],nums,result)
-        return sum(result)
+        result=self.solve(0,0,nums)
+        return result
