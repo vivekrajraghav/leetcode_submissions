@@ -1,3 +1,4 @@
+from collections import Counter
 class Solution:
     def solve(self,board,word,i,j,word_idx):
         if word_idx==len(word):
@@ -19,6 +20,13 @@ class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         m=len(board)
         n=len(board[0])
+        board_freq=Counter(char for row in board for char in row)
+        word_freq=Counter(word)
+        for char,count in word_freq.items():
+            if board_freq[char]<count:
+                return False
+        if word_freq[word[0]]>board_freq[word[-1]]:
+            word=word[::-1]
         word_present=False
         for i in range(m):
             for j in range(n):
