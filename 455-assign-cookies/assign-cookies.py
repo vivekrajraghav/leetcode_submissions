@@ -1,14 +1,14 @@
 class Solution:
     def findContentChildren(self, g: list[int], s: list[int]) -> int:
-        g.sort(reverse=True)
-        s.sort(reverse=True)
-        sidx=0
-        count=0
         n=len(g)
-        for i in range(n):
-            if sidx>=len(s):
-                return count
-            if g[i]<=s[sidx]:
+        m=len(s)
+        count=0
+        i,j=0,0
+        g.sort()
+        s.sort()
+        while i<n and j<m:
+            if g[i]<=s[j]:
                 count+=1
-                sidx+=1
+                i+=1
+            j+=1
         return count
