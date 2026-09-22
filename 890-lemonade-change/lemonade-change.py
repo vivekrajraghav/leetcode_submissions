@@ -1,6 +1,6 @@
 class Solution:
     def lemonadeChange(self, bills: list[int]) -> bool:
-        my_dict={"5":0,"10":0,"20":0}
+        my_dict={"5":0,"10":0}
         n=len(bills)
         for i in range(n):
             if bills[i]==5:
