@@ -1,0 +1,31 @@
+class Solution:
+    def dfs(self,r,c,visited,grid):
+        if r>=len(grid) or c>=len(grid[0]) or r<0 or c<0 or visited[r][c]==1 or grid[r][c]==0:
+            return
+        visited[r][c]=1
+        self.dfs(r+1,c,visited,grid)
+        self.dfs(r-1,c,visited,grid)
+        self.dfs(r,c+1,visited,grid)
+        self.dfs(r,c-1,visited,grid)
+    def numEnclaves(self, grid: list[list[int]]) -> int:
+        row=len(grid)
+        col=len(grid[0])
+        visited=[[0 for _ in range(col)] for _ in range(row)]
+        for i in range(row):
+            if grid[i][0]==1 and visited[i][0]!=1:
+                self.dfs(i,0,visited,grid)
+        for j in range(col):
+            if grid[0][j]==1 and visited[0][j]!=1:
+                self.dfs(0,j,visited,grid)
+        for i in range(row):
+            if grid[i][col-1]==1 and visited[i][col-1]!=1:
+                self.dfs(i,col-1,visited,grid)
+        for j in range(col):
+            if grid[row-1][j]==1 and visited[row-1][j]!=1:
+                self.dfs(row-1,j,visited,grid)
+        count=0
+        for r in range(row):
+            for c in range(col):
+                if grid[r][c]==1 and visited[r][c]==0:
+                    count+=1
+        return count
