@@ -1,6 +1,8 @@
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: list[str]) -> int:
         my_set=set(wordList)
+        if endWord not in my_set:
+            return 0
         queue=deque()
         level=1
         queue.append((beginWord,level))
