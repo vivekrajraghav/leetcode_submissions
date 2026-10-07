@@ -5,7 +5,7 @@ class Solution:
         queue=deque()
         queue.append((r,c))
         visited[r][c]=1
-        while len(queue)!=0:
+        while queue:
             r,c=queue.popleft()
             for x,y in [(1,0),(0,1),(-1,0),(0,-1)]:
                 new_r=r+x
