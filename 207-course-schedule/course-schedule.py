@@ -19,5 +19,4 @@ class Solution:
                     queue.append(adjNode)
         if len(result)==numCourses:
             return True
-        else:
-            return False
+        return False
