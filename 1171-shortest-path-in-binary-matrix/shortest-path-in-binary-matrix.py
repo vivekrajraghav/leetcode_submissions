@@ -15,8 +15,12 @@ class Solution:
                 new_y=y+j
                 if new_x>=row or new_y>=col or new_x<0 or new_y<0 or grid[new_x][new_y]==1 or distance[new_x][new_y]!=float("inf"):
                     continue
-                queue.append([new_x,new_y,d+1])
-                distance[new_x][new_y]=d+1
+                d_trav=d+1
+                if d_trav<distance[new_x][new_y]:
+                    if new_x==row-1 and new_y==col-1:
+                        return d_trav
+                    queue.append([new_x,new_y,d_trav])
+                    distance[new_x][new_y]=d_trav
         if distance[row-1][col-1]==float("inf"):
             return -1
         return distance[row-1][col-1]
