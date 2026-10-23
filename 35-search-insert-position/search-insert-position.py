@@ -12,3 +12,4 @@ class Solution:
             if nums[mid]<target:
                 i=mid+1
         return j+1
+        
